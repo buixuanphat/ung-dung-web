@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    table {
+        border-collapse: collapse;
+        box-shadow: 0px 0px 100px #aaaaaa;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        margin-bottom: 50px;
+    }
+
+
+    tr:nth-child(odd) {
+        background-color: #d2d2d2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #eeeeee;
+    }
+
+    th {
+        background-color: blue;
+        color: white;
+    }
+
+    td,
+    th {
+        padding: 10px;
+        border: 1px solid #FFFFFF;
+    }
+
+    .container {
+        width: 60%;
+        border-radius: 20px;
+        box-shadow: 0px 0px 100px #aaaaaa;
+        padding: 50px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 50%;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    input,
+    select {
+        border: 1px solid #aaaaaa;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: rgb(97, 97, 197);
+        border-radius: 10px;
+        border: none;
+        color: white;
+    }
+
+    button:hover {
+        background-color: rgb(79, 79, 160);
+    }
+
+    textarea {
+        min-height: 200px;
+    }
+</style>
+
+<body>
+    <h1>Các sự kiện trong tháng 12/2025</h1>
+    <table>
+        <tr>
+            <th>Sự kiện</th>
+            <th>Địa điểm</th>
+            <th>Thời gian</th>
+        </tr>
+        <tr>
+            <td>Hội thi tay nghề điêu khắc</td>
+            <td>Tây Ninh</td>
+            <td>Từ ngày 01-04 tháng 12/2025</td>
+        </tr>
+        <tr>
+            <td>Triển lãm tranh sơn mài</td>
+            <td>Bình Dương</td>
+            <td>Từ ngày 10-15 tháng 12/2025</td>
+        </tr>
+        <tr>
+            <td>Hội thi bánh dân gian nam bộ</td>
+            <td>Vĩnh Long</td>
+            <td>Từ ngày 15-20 tháng 12/2025</td>
+        </tr>
+        <tr>
+            <td>Hội thi văn nghệ quần chúng</td>
+            <td>TP Hồ Chí Minh</td>
+            <td>Từ ngày 15-30 tháng 12/2025</td>
+        </tr>
+    </table>
+    <div class="container">
+        <h1>Đăng kí tham gia sự kiện</h1>
+        <form>
+            <label>Họ và tên</label>
+            <input type="text" />
+
+            <label>Email</label>
+            <input type="text" />
+
+            <label>Số điện thoại</label>
+            <input type="text" />
+
+            <label>Chọn sự kiện</label>
+            <select>
+                <option>Hội thi tay nghề điêu khắc</option>
+                <option>Triển lãm tranh sơn mài</option>
+                <option>Hội thi bánh dân gian nam bộ</option>
+                <option>Hội thi văn nghệ quần chúng</option>
+            </select>
+
+            <label>Thông tin thêm</label>
+            <textarea></textarea>
+
+            <button type="submit">Đăng ký ngay</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
