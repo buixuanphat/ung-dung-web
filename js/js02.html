@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        let month = prompt("Nhập tháng:");
+        let year = prompt("Nhập năm:");
+
+
+        let calLeapYear = () => {
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        let calDaysInMonth = () => {
+            if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+                return 31;
+            } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+                return 30;
+            } else if (month == 2) {
+                if (calLeapYear()) {
+                    return 29;
+                } else {
+                    return 28;
+                }
+            } else {
+                return "Tháng không hợp lệ";
+            }
+        }
+
+        let print = () => {
+            let daysInMonth = calDaysInMonth();
+            if (typeof daysInMonth === "number") {
+                document.getElementById("result").innerHTML = `Tháng ${month} năm ${year} có ${daysInMonth} ngày.`;
+            } else {
+                document.getElementById("result").innerHTML = "Không hợp lệ";
+            }
+
+        }
+
+        let formatDay = (day) => {
+            if (day == 6) {
+                return "chủ nhật";
+            } else {
+                return "thứ " + (Number(day) + 1);
+            }
+        }
+
+        let showDateTime = () => {
+            let currentDate = new Date();
+            let dateTimeString = currentDate.toLocaleString();
+            document.getElementById("date").innerHTML = "Hôm nay, " + formatDay(currentDate.getDay()) + " ngày " + currentDate.toLocaleDateString('vi-VN');
+            document.getElementById("time").innerHTML = currentDate.toLocaleTimeString();
+        }
+    </script>
+
+    <style>
+        body {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="result"></h1>
+    <script>
+        print();
+    </script>
+    <h2 id="date"></h2>
+    <h2 id="time"></h2>
+    <button id="btn" onclick="showDateTime()">Xem ngày giờ</button>
+</body>
+
+</html>

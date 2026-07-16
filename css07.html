@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .header {
+            color: white;
+            background-color: #000000;
+            text-align: center;
+            padding: 10px 0px;
+        }
+
+        .header .title {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            background-color: #444444;
+            padding: 10px 0;
+        }
+
+        li {
+            display: inline-block;
+        }
+
+        li a {
+            text-decoration: none;
+            display: inline;
+            color: #d9ff00;
+            padding: 10px 10px;
+        }
+
+        li a:hover {
+            font-weight: bold;
+            color: rgb(255, 0, 0);
+        }
+
+        li ul {
+            display: none;
+            position: absolute;
+            background-image: linear-gradient(to right, #000000, #939393);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .nav-container ul li:hover .sub-menu {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .products div {
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ababab;
+        }
+
+        .products div img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        button {
+            background-color: #00611f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .products p:first-of-type {
+            font-weight: 700;
+        }
+
+        .products p:nth-of-type(2) {
+            color: #9c9c9c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <p class="title">Shop Online</p>
+        <p>Chào mừng bạn đến với cửa hàng của chúng tôi!</p>
+    </div>
+    <div class="nav-container">
+        <ul class="menu" type="none">
+            <li>
+                <a href="#">Trang chủ</a>
+            </li>
+            <li>
+                <a href="#">Sản phẩm</a>
+                <ul class="sub-menu" type="none">
+                    <li>
+                        <a href="#">Phụ kiện</a>
+                    </li>
+                    <li>
+                        <a href="#">Điện thoại</a>
+                    </li>
+                    <li>
+                        <a href="#">Lapop</a>
+                    </li>
+                    <li>
+                        <a href="#">Máy tính bảng</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Khuyến mãi</a>
+            </li>
+            <li>
+                <a href="#">Liên hệ</a>
+        </ul>
+    </div>
+    <div class="products">
+        <div>
+            <img src="./images/headphone.jpg" alt="Iphone 10 Promax">
+            <p>Tai nghe Bluetooth</p>
+            <p>Giá: 490.000₫</p>
+            <button>Thêm vào giỏ</button>
+        </div>
+
+        <div>
+            <img src="./images/balo.jpg" alt="Iphone 10 Promax">
+            <p>Balo laptop</p>
+            <p>Giá: 500.000₫</p>
+            <button>Thêm vào giỏ</button>
+        </div>
+
+        <div>
+            <img src="./images/sacdt.webp" alt="Iphone 10 Promax">
+            <p>Sạc điện thoại không dây</p>
+            <p>Giá: 300.000₫</p>
+            <button>Thêm vào giỏ</button>
+        </div>
+        <div>
+            <img src="./images/headphone.jpg" alt="Iphone 10 Promax">
+            <p>Tai nghe Bluetooth</p>
+            <p>Giá: 490.000₫</p>
+            <button>Thêm vào giỏ</button>
+        </div>
+
+        <div>
+            <img src="./images/balo.jpg" alt="Iphone 10 Promax">
+            <p>Balo laptop</p>
+            <p>Giá: 500.000₫</p>
+            <button>Thêm vào giỏ</button>
+        </div>
+
+        <div>
+            <img src="./images/sacdt.webp" alt="Iphone 10 Promax">
+            <p>Sạc điện thoại không dây</p>
+            <p>Giá: 300.000₫</p>
+            <button>Thêm vào giỏ</button>
+        </div>
+        <div>
+            <img src="./images/headphone.jpg" alt="Iphone 10 Promax">
+            <p>Tai nghe Bluetooth</p>
+            <p>Giá: 490.000₫</p>
+            <button>Thêm vào giỏ</button>
+        </div>
+
+        <div>
+            <img src="./images/balo.jpg" alt="Iphone 10 Promax">
+            <p>Balo laptop</p>
+            <p>Giá: 500.000₫</p>
+            <button>Thêm vào giỏ</button>
+        </div>
+
+        <div>
+            <img src="./images/sacdt.webp" alt="Iphone 10 Promax">
+            <p>Sạc điện thoại không dây</p>
+            <p>Giá: 300.000₫</p>
+            <button>Thêm vào giỏ</button>
+        </div>
+        <div>
+            <img src="./images/headphone.jpg" alt="Iphone 10 Promax">
+            <p>Tai nghe Bluetooth</p>
+            <p>Giá: 490.000₫</p>
+            <button>Thêm vào giỏ</button>
+        </div>
+
+        <div>
+            <img src="./images/balo.jpg" alt="Iphone 10 Promax">
+            <p>Balo laptop</p>
+            <p>Giá: 500.000₫</p>
+            <button>Thêm vào giỏ</button>
+        </div>
+
+        <div>
+            <img src="./images/sacdt.webp" alt="Iphone 10 Promax">
+            <p>Sạc điện thoại không dây</p>
+            <p>Giá: 300.000₫</p>
+            <button>Thêm vào giỏ</button>
+        </div>
+    </div>
+</body>
+
+</html>

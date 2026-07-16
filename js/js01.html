@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            display: block;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        td {
+            text-align: left;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            vertical-align: top;
+        }
+
+        table {
+            text-align: center;
+            border-color: black;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <h1>BẢNG CỬU CHƯƠNG</h1>
+    <table border="1">
+        <script>
+            let html = "";
+            let count = 2;
+
+            for (let row = 0; row < 2; row++) {
+                html += "<tr>";
+
+                for (let col = 0; col < 4; col++) {
+                    html += "<td>";
+
+                    for (let i = 1; i <= 10; i++) {
+                        html += `${count} x ${i} = ${count * i}<br>`;
+                    }
+
+                    html += "</td>";
+                    count++;
+                }
+
+                html += "</tr>";
+            }
+
+            document.write(html);
+        </script>
+    </table>
+</body>
+
+</html>
