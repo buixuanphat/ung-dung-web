@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            padding: 5px;
+        }
+
+        input {
+            width: 500px;
+        }
+    </style>
+
+    <script>
+        let array
+
+        let createArr = (n) => {
+            let arr = []
+            for (let i = 0; i < n; i++) {
+                arr.push(parseInt((Math.random() * 100)) % 50 + 1)
+            }
+            return arr
+        }
+
+        let printArr = () => {
+            let noe = document.getElementById("noe").value
+            let arr = createArr(noe)
+            array = arr
+            let str = arr.join(" -> ")
+            document.getElementById("init").value = str
+        }
+
+        let sortIncrease = () => {
+            let arr = array
+            console.log(arr)
+            arr.sort((a, b) => a - b)
+            let str = arr.join(" -> ")
+            document.getElementById("increase").value = str
+        }
+
+
+        let sortDecrease = () => {
+            let arr = array
+            console.log(arr)
+            arr.sort((a, b) => b - a)
+            let str = arr.join(" -> ")
+            document.getElementById("decrease").value = str
+        }
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <label>Nhập số phần tử: </label>
+        <input id="noe">
+    </div>
+    <div>
+        <button onclick="printArr()">Tạo mảng</button>
+        <button onclick="sortIncrease()">Tăng</button>
+        <button onclick="sortDecrease()">Giảm</button>
+    </div>
+    <div>
+        <label>Mảng ban đầu</label>
+        <input id="init">
+    </div>
+    <div>
+        <label>Mảng tăng dần</label>
+        <input id="increase">
+    </div>
+    <div>
+        <label>Mảng giảm dần</label>
+        <input id="decrease">
+    </div>
+</body>
+
+</html>

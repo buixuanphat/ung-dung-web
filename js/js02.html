@@ -31,15 +31,6 @@
             }
         }
 
-        let print = () => {
-            let daysInMonth = calDaysInMonth();
-            if (typeof daysInMonth === "number") {
-                document.getElementById("result").innerHTML = `Tháng ${month} năm ${year} có ${daysInMonth} ngày.`;
-            } else {
-                document.getElementById("result").innerHTML = "Không hợp lệ";
-            }
-
-        }
 
         let formatDay = (day) => {
             if (day == 6) {
@@ -49,12 +40,29 @@
             }
         }
 
-        let showDateTime = () => {
+        let cal = () => {
+            let daysInMonth = calDaysInMonth();
+            if (typeof daysInMonth === "number") {
+                document.getElementById("result").innerHTML = `Tháng ${month} năm ${year} có ${daysInMonth} ngày.`;
+            } else {
+                document.getElementById("result").innerHTML = "Không hợp lệ";
+            }
+
+        }
+
+        let showTime = () => {
+            let currentDate = new Date();
+            document.getElementById("time").innerHTML = currentDate.toLocaleTimeString()
+        }
+
+        let showDate = () => {
             let currentDate = new Date();
             let dateTimeString = currentDate.toLocaleString();
             document.getElementById("date").innerHTML = "Hôm nay, " + formatDay(currentDate.getDay()) + " ngày " + currentDate.toLocaleDateString('vi-VN');
-            document.getElementById("time").innerHTML = currentDate.toLocaleTimeString();
+            setInterval(showTime, 1000)
         }
+
+
     </script>
 
     <style>
@@ -67,11 +75,11 @@
 <body>
     <h1 id="result"></h1>
     <script>
-        print();
+        cal()
     </script>
     <h2 id="date"></h2>
     <h2 id="time"></h2>
-    <button id="btn" onclick="showDateTime()">Xem ngày giờ</button>
+    <button id="btn" onclick="showDate()">Xem ngày giờ</button>
 </body>
 
 </html>

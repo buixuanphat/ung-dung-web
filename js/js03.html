@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: flex-start;
+        }
+    </style>
+    <script>
+        let statictis = () => {
+            let html = ""
+
+            let string = document.getElementById("string").value.trim()
+            let characters = 0;
+            for (let i = 0; i < string.length; i++) {
+                if (string[i] === " " && i > 0 && string[i - 1] === " ") {
+                    continue
+                }
+                characters++
+            }
+            html += `<p>Characters: ${characters}</p>`
+
+            let words = 1
+            for (let i = 0; i < string.length; i++) {
+                if (string[i] !== " " && string[i - 1] === " ") {
+                    words++
+                }
+            }
+            html += `<p>Words: ${words}</p>`
+
+
+            charStr = ""
+            for (let i = 0; i < string.length; i++) {
+                if (charStr.includes(string[i])) {
+                    continue
+                }
+                charStr += string[i]
+            }
+
+            html += "<p>"
+            let count = 0;
+            for (let i = 0; i < charStr.length; i++) {
+                let char = charStr[i]
+                for (let j = 0; j < string.length; j++) {
+                    if (char === string[j]) {
+                        count++
+                    }
+                }
+                html += `Character '${char}': ${count} <br>`
+                count = 0
+            }
+            html += "</p>"
+            document.getElementById("result").innerHTML = html
+        }
+    </script>
+</head>
+
+<body class="container">
+    <div class="row">
+        <label>String: </label>
+    </div>
+    <div class="row">
+        <input id="string" type="text">
+        <button onclick="statictis()">Statistic</button>
+        <p id="result"></p>
+    </div>
+</body>
+
+</html>

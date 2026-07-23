@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        input {
+            width: 500px;
+        }
+    </style>
+    <script>
+        let formatedStr = ""
+
+        let format = () => {
+            let str = new String(initStr)
+            str.trim()
+            str.toLowerCase()
+            let newStr = str[0].toUpperCase()
+            for (let i = 1; i < str.length; i++) {
+                if (i > 0 && str[i] === " " && str[i - 1] === " ") {
+                    continue
+                }
+                if (i > 0 && str[i] !== " " && str[i - 1] === " ") {
+                    newStr += str[i].toUpperCase()
+                }
+                else {
+                    newStr += str[i].toLocaleLowerCase()
+                }
+
+            }
+            formatedStr = newStr
+            document.getElementById("init").value = newStr
+        }
+
+
+        let restore = () => {
+            document.getElementById("init").value = initStr
+        }
+
+
+        let reverse = () => {
+            let arr = formatedStr.split(" ")
+            let reverseArr = []
+            let length = arr.length
+            for (let i = length - 1; i >= 0; i--) {
+                reverseArr.push(arr[i])
+            }
+            document.getElementById("init").value = reverseArr.join(" ")
+        }
+
+        let replace = () => {
+            let str = new String(formatedStr)
+            let s2 = document.getElementById("s2").value
+            let s3 = document.getElementById("s3").value
+            str = str.replace(s2, s3)
+            document.getElementById("init").value = str
+        }
+
+
+        let insert = () => {
+            let str = new String(formatedStr)
+            let s2 = document.getElementById("s2").value
+            let pos = document.getElementById("position").value
+            let first = str.substring(0, pos - 1)
+            let second = str.substring(pos - 1, str.length)
+            let result = `${first} ${s2} ${second}`
+            document.getElementById("init").value = result
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Chương trình xử lý chuỗi</h1>
+    <table>
+        <tr>
+            <td>
+                <label>Chuỗi S1</label>
+            </td>
+            <td>
+                <input id="init">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Chuỗi S2</label>
+            </td>
+            <td>
+                <input id="s2">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Chuỗi S3</label>
+            </td>
+            <td>
+                <input id="s3">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Vị trí chèn</label>
+            </td>
+            <td>
+                <input type="number" id="position">
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                <div>
+                    <button onclick="format()">Chuẩn hóa chuỗi</button>
+                    <button onclick="restore()">Khôi phục</button>
+                    <button onclick="reverse()">Đảo chuỗi</button>
+                    <button onclick="replace()">Thay thế S2 bằng S3</button>
+                    <button onclick="insert()">Chèn S2 vào S1</button>
+                    <button>Xóa S2 trong S1</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <script>
+        document.getElementById("init").value = "    maNchEstEr       unItEd     ChElSea    aRsenal    "
+        document.getElementById("s2").value = "United"
+        document.getElementById("s3").value = "City"
+        initStr = document.getElementById("init").value
+    </script>
+</body>
+
+</html>
